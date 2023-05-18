@@ -1,8 +1,10 @@
 from flask import Flask,request,jsonify,render_template
 import pickle
 import numpy as np
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 model = pickle.load(open("disease.pkl","rb"))
 dic_a=pickle.load(open("diseasedic_a1.pkl","rb"))
